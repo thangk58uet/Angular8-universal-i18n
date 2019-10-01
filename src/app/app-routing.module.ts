@@ -7,13 +7,13 @@ import { PlacesModule } from './components/places/places.module';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: 'full'},
-  {path: 'vi/', component: HomePageComponent, pathMatch: 'full'},
-  {path: 'en/', component: HomePageComponent, pathMatch: 'full'},
+  // {path: 'vi/', component: HomePageComponent, pathMatch: 'full'},
+  // {path: 'en/', component: HomePageComponent, pathMatch: 'full'},
   {path: 'places', loadChildren: () => import('./components/places/places.module').then(m => m.PlacesModule)},
   {path: 'products', loadChildren: () => import('./components/products/products.module').then(m => m.ProductsModule)},
   {path: '404', component: Error404PageComponent},
-  {path: 'en', redirectTo: 'en/'},
-  {path: 'vi', redirectTo: 'vi/'}, // because english language is the default one
+  // {path: 'en', redirectTo: 'en/'},
+  // {path: 'vi', redirectTo: 'vi/'}, // because english language is the default one
 
   // otherwise redirect to 404
   {path: '**', redirectTo: '404'}
@@ -21,8 +21,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    ProductsModule,
-    PlacesModule,
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabled',
       scrollPositionRestoration: 'enabled',

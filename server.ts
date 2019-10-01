@@ -7,6 +7,7 @@ import {join} from 'path';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 import {AppConfig} from './src/app/configs/app.config';
+import {CookieService} from 'ngx-cookie';
 
 import { readFileSync } from 'fs';
 
@@ -34,6 +35,8 @@ global['document'] = win.document;
 const routes = [
   {path: '/en/*', view: 'en/index', bundle: require(join(DIST_FOLDER, 'server', 'en', 'main'))},
   {path: '/vi/*', view: 'vi/index', bundle: require(join(DIST_FOLDER, 'server', 'vi', 'main'))},
+  {path: '/en', view: 'en/index', bundle: require(join(DIST_FOLDER, 'server', 'en', 'main'))},
+  {path: '/vi', view: 'vi/index', bundle: require(join(DIST_FOLDER, 'server', 'vi', 'main'))},
   {path: '/*', view: 'index', bundle: require(join(DIST_FOLDER, 'server', 'main'))},
 ];
 

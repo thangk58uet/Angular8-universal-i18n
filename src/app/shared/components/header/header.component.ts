@@ -3,6 +3,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {NavigationEnd, Router, ActivatedRoute} from '@angular/router';
 import {CookieService} from 'ngx-cookie';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,7 +21,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private cookieService: CookieService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private location: Location) {
     this.languages = [
       {name: 'en', label: 'English'},
       {name: 'vi', label: 'Vietnam'}
@@ -34,12 +37,14 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
+        console.log('currentUrl', this.currentUrl);
       }
     });
 
     if (this.href === 'http://localhost:4000' || this.href === 'http://localhost:4000/') {
       window.open(this.href + this.selectedLanguage + '/', '_self');
     }
+    //console.log('activeRouter', this.activatedRoute.url)
   }
 
   changeLanguage(language: string): void {
