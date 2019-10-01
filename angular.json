@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularexampleapp": {
+    "dlaca": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -221,21 +221,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angularexampleapp:build:vi"
+            "browserTarget": "dlaca:build:vi"
           },
           "configurations": {
             "en": {
-              "browserTarget": "angularexampleapp:build:en"
+              "browserTarget": "dlaca:build:en"
             },
             "vi": {
-              "browserTarget": "angularexampleapp:build:vi"
+              "browserTarget": "dlaca:build:vi"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularexampleapp:build:vi"
+            "browserTarget": "dlaca:build:vi"
           }
         },
         "test": {
@@ -348,11 +348,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angularexampleapp:serve"
+            "devServerTarget": "dlaca:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angularexampleapp:serve:production"
+              "devServerTarget": "dlaca:serve:production"
             }
           }
         }
@@ -399,5 +399,5 @@
       }
     }
   },
-  "defaultProject": "angularexampleapp"
+  "defaultProject": "dlaca"
 }

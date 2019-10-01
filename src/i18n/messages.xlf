@@ -20,7 +20,7 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="angularExampleApp" datatype="html">
+      <trans-unit id="dlaca" datatype="html">
         <source>Angular Example App 2019</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/footer/footer.component.html</context>

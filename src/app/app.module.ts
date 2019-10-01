@@ -41,7 +41,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({appId: 'angularexampleapp'}),
+    BrowserModule.withServerTransition({appId: 'dlaca'}),
     PrebootModule.withConfig({appRoot: 'app-root'}),
     HttpClientModule,
     RouterModule,
